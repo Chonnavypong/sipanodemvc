@@ -1,3 +1,3 @@
-exports.render = (req, res) => {
-    res.send('Hello World! MVC_Change')
+exports.render = function(req, res) {
+    res.send('Hello World!dr')
 }
