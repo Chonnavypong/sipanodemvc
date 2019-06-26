@@ -1,3 +1,3 @@
 exports.render = function(req, res) {
-    res.send('Hello World!dr')
+    res.send('Hello World!')
 }
