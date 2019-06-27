@@ -16,6 +16,7 @@ module.exports = function(){
     }));
     app.use(bodyParser.json());
 
-    require('../app/routes/index.routes')(app);
+    var indexRoute = require('../app/routes/index.routes')(app); // call function ใน index.routes 
+    //console.log(indexRoute.toString());
     return app;
 }
