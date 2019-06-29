@@ -8,8 +8,31 @@
     <title><%=title%></title>
 </head>
 <body>
-    <h1> <%= message_1 %> </h1>
-    <h2> <%= message_2 %></h2>
-    <img src="/img/remote-control.png" alt="">
+    <h1> <%= title %> </h1>
+    <% if(isLoggedIn) { %>
+        <h3> You are logged in. </h3>
+        <form name='logout' method="POST" action="logout">
+            <div>
+                <input type="submit" value="Logout">
+            </div>
+        </form>
+    <% } else { %>
+        <form name="login" method="POST" action="login">
+            <div>
+                <label for="email"> Email </label>
+                <input type="email" name="email" placeholder="Your Email">
+            </div>
+            <div>
+                <label for="password"> Password </label>
+                <input type="password" name="password" placeholder="password">
+            </div>
+            <div>
+                <input type="submit" value="Login">
+            </div>
+
+        </form>
+        
+        <% } %>
+
 </body>
 </html>

@@ -21,7 +21,8 @@ module.exports = function(){
     app.set('view engine', 'ejs')
 
     require('../app/routes/index.routes')(app); // call function ใน index.routes 
-    
+    require('../app/routes/user.routes')(app);
+
     app.use(sass({
         src : './sass',
         dest : './public/css',
