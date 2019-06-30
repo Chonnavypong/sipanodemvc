@@ -6,5 +6,12 @@ exports.login = function (req, res) {
     res.render('index', {
         title: 'Logged in as ' + req.body.email,
         isLoggedIn : true
-    })
+    });
+}
+
+exports.logout = function(req, res) {
+    res.render('index',{
+        title : 'User had logout already',
+        isLoggedIn : false
+    });
 }
