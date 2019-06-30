@@ -2,7 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const compression = require('compression');
 const bodyParser = require('body-parser');
+const {check, validationResult} = require('express-validator');
 const sass = require('node-sass-middleware');
+
 
 module.exports = function(){
     const app = express();
@@ -16,12 +18,13 @@ module.exports = function(){
         extended: true
     }));
     app.use(bodyParser.json());
+    app.use(check);  // use express-validator
 
     app.set('views', './app/views');
     app.set('view engine', 'ejs')
 
     require('../app/routes/index.routes')(app); // call function ใน index.routes 
-    require('../app/routes/user.routes')(app);
+    require('../app/routes/user.routes')(app); // app argument ส่งไปให้ routes 
 
     app.use(sass({
         src : './sass',
