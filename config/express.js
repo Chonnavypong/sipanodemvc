@@ -18,7 +18,8 @@ module.exports = function(){
         extended: true
     }));
     app.use(bodyParser.json());
-    app.use(check);  // use express-validator
+    // ยังไม่ได้เรียก express-validation มาให้
+
 
     app.set('views', './app/views');
     app.set('view engine', 'ejs')
